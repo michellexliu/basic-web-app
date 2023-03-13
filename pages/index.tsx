@@ -1,12 +1,12 @@
-import { useState } from "react";
-import QueryProcessor from "../utils/QueryProcessor";
+import { useState } from 'react';
+import QueryProcessor from '../utils/QueryProcessor';
 
 export default function Home() {
-  const [query, setQuery] = useState<string>("");
+  const [query, setQuery] = useState<string>('');
 
   return (
     <div>
-      <h1>Welcome!!</h1>
+      <h1>Welcome to Michelle's page!!</h1>
       <p>Please enter your query in the box below:</p>
       <input
         type="text"
@@ -16,7 +16,7 @@ export default function Home() {
         }
       />
       <div>
-        {QueryProcessor(query) == "" ? "No Match" : QueryProcessor(query)}
+        {QueryProcessor(query) == '' ? 'No Match' : QueryProcessor(query)}
       </div>
     </div>
   );
