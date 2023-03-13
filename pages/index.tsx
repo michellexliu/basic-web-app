@@ -6,7 +6,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Welcome to Michelle's page!!</h1>
+      <h1>Welcome to Michelle&apos;s page!!</h1>
       <p>Please enter your query in the box below:</p>
       <input
         type="text"
