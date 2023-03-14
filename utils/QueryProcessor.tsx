@@ -9,5 +9,5 @@ export default function QueryProcessor(query: string): string {
   }
 
   console.log(query);
-  // return 89;
+  return '89';
 }
