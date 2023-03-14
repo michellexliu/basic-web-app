@@ -90,5 +90,5 @@ export default function QueryProcessor(query: string): string {
     return String(filtered[0]);
   }
 
-  return '89';
+  return '';
 }
