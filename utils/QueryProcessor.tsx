@@ -38,6 +38,13 @@ export default function QueryProcessor(query: string): string {
       .split(' multiplied by ')
       .map((w) => parseInt(w));
     return String(nums[0] * nums[1]);
+  } else if (query.toLowerCase().includes(' minus ')) {
+    const nums = query
+      .replaceAll('What is ', '')
+      .replaceAll('?', '')
+      .split(' minus ')
+      .map((w) => parseInt(w));
+    return String(nums[0] - nums[1]);
   } else if (lower.includes('square and a cube')) {
     const nums = query
       .replaceAll(
