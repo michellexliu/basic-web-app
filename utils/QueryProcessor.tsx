@@ -58,6 +58,13 @@ export default function QueryProcessor(query: string): string {
       .split(' multiplied by ')
       .map((w) => parseInt(w));
     return String(nums[0] * nums[1]);
+  } else if (query.toLowerCase().includes('power of')) {
+    const nums = query
+      .replaceAll('What is ', '')
+      .replaceAll('?', '')
+      .split(' to the power of ')
+      .map((w) => parseInt(w));
+    return String(Math.pow(nums[0], nums[1]));
   } else if (query.toLowerCase().includes(' minus ')) {
     const nums = query
       .replaceAll('What is ', '')
