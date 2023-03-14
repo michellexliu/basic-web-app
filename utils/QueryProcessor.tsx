@@ -50,7 +50,7 @@ export default function QueryProcessor(query: string): string {
       .replaceAll('?', '')
       .split(' plus ')
       .map((w) => parseInt(w));
-    return String(nums[0] + nums[1]);
+    return String(nums.reduce((partialSum, a) => partialSum + a, 0));
   } else if (query.toLowerCase().includes('multiplied by')) {
     const nums = query
       .replaceAll('What is ', '')
