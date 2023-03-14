@@ -87,7 +87,7 @@ export default function QueryProcessor(query: string): string {
 
     const filtered = nums.filter((num) => isPrime(num));
 
-    return String(filtered[0]);
+    return String(filtered.join(', '));
   }
 
   return '';
