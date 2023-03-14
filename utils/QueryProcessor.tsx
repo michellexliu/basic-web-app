@@ -15,6 +15,26 @@ function isSquareAndCube(num: number) {
   return true;
 }
 
+function isPrime(num: number) {
+  if (num < 2) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+const mathSplit = (query: string, op: string) => {
+  return query
+    .replaceAll('What is ', '')
+    .replaceAll('?', '')
+    .split(op)
+    .map((w) => parseInt(w));
+};
+
 export default function QueryProcessor(query: string): string {
   const lower = query.toLowerCase().replace('?', '');
   if (query.toLowerCase().includes('is the largest')) {
@@ -56,6 +76,16 @@ export default function QueryProcessor(query: string): string {
       .map((w) => parseInt(w));
 
     const filtered = nums.filter((num) => isSquareAndCube(num));
+
+    return String(filtered[0]);
+  } else if (lower.includes('are primes')) {
+    const nums = query
+      .replaceAll('Which of the following numbers are primes: ', '')
+      .replaceAll('?', '')
+      .split(', ')
+      .map((w) => parseInt(w));
+
+    const filtered = nums.filter((num) => isPrime(num));
 
     return String(filtered[0]);
   }
